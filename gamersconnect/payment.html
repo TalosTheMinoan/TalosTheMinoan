@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Page</title>
+  <style>
+    /* CSS styles */
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f3f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    #header {
+      background-color: #7289da;
+      padding: 20px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    #content {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="number"],
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #cccccc;
+    }
+
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      padding-right: 30px;
+      background-image: url("arrow-down.png");
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
+
+    .form-group input[type="submit"] {
+      display: inline-block;
+      background-color: #7289da;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background-color 0.3s ease-in-out;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #677bc4;
+    }
+
+    .subscription-card {
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f7fa;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .subscription-card:hover {
+      transform: scale(1.05);
+    }
+
+    .subscription-card h3 {
+      margin-top: 0;
+    }
+
+    .subscription-card p {
+      margin-bottom: 20px;
+    }
+
+    .subscription-card .price {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .subscription-card:hover .price {
+      color: #7289da;
+    }
+
+    .payment-summary {
+      background-color: #f5f7fa;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .payment-summary-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .payment-summary-item {
+      margin-bottom: 10px;
+    }
+
+    .payment-summary-item span {
+      display: inline-block;
+      width: 100px;
+    }
+
+    /* Popup styles */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      font-weight: bold;
+      animation: fade-in 0.3s ease-in-out;
+    }
+
+    /* Shake animation */
+    .shake {
+      animation: shake 0.5s linear;
+      animation-iteration-count: 3;
+    }
+
+    @keyframes shake {
+      10%, 90% {
+        transform: translateX(-5px);
+      }
+
+      20%, 80% {
+        transform: translateX(5px);
+      }
+
+      30%, 50%, 70% {
+        transform: translateX(-3px);
+      }
+
+      40%, 60% {
+        transform: translateX(3px);
+      }
+    }
+
+    /* Fade-in animation */
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Cool-down overlay */
+    .cooldown-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .cooldown-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cooldown-overlay span {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Card type detection */
+    .card-type-container {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .card-type-logo {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      display: none;
+    }
+
+    .card-type-label {
+      font-size: 14px;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1>Payment Page</h1>
+  </div>
+
+  <div id="content">
+    <h2>Select a Subscription</h2>
+    <div id="subscription-page">
+      <div class="subscription-card" onclick="selectSubscription('monthly')">
+        <h3>Monthly Subscription</h3>
+        <p>Billed monthly</p>
+        <p class="price">€7.99</p>
+      </div>
+      <div class="subscription-card" onclick="selectSubscription('yearly')">
+        <h3>Yearly Subscription</h3>
+        <p>Billed annually</p>
+        <p class="price">€79.99</p>
+      </div>
+      <div class="subscription-card" onclick="selectSubscription('classic')">
+        <h3>Classic Subscription</h3>
+        <p>Billed monthly</p>
+        <p class="price">€1.99</p>
+      </div>
+      <div class="subscription-card" onclick="selectSubscription('classicyearly')">
+        <h3>Classic Yearly Subscription</h3>
+        <p>Billed annually</p>
+        <p class="price">€20.11</p>
+      </div>
+    </div>
+
+    <div id="payment-form" style="display: none;">
+      <h2>Payment Details</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="card-number">Card Number</label>
+          <div class="card-type-container">
+            <img class="card-type-logo" id="payment-method-logo" src="" alt="">
+            <span class="card-type-label" id="payment-method-name"></span>
+          </div>
+          <input type="text" id="card-number" name="card-number" required oninput="detectCardType()">
+        </div>
+        <div class="form-group">
+          <label for="expiration-date">Expiration Date</label>
+          <input type="text" id="expiration-date" name="expiration-date" required>
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" required>
+        </div>
+        <div class="form-group">
+          <label for="country">Currency</label>
+          <select id="currency" name="currency" required>
+            <option value="EUR">Euro (€)</option>
+            <option value="USD">US Dollar ($)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Make Payment">
+        </div>
+      </form>
+    </div>
+
+    <div class="payment-summary" id="payment-summary" style="display: none;">
+      <h2>Payment Summary</h2>
+      <div class="payment-summary-item">
+        <span>Subscription:</span>
+        <span id="summary-subscription"></span>
+      </div>
+      <div class="payment-summary-item">
+        <span>Name:</span>
+        <span id="summary-name"></span>
+      </div>
+      <div class="payment-summary-item">
+        <span>Email:</span>
+        <span id="summary-email"></span>
+      </div>
+      <div class="payment-summary-item">
+        <span>Total Amount:</span>
+        <span id="summary-amount"></span>
+      </div>
+    </div>
+
+    <div class="cooldown-overlay">
+      <span>Processing...</span>
+    </div>
+  </div>
+
+  <script>
+    // Remaining script code is unchanged
+    function completePurchase() {
+      // Remaining code is unchanged
+
+      // Store the purchase details in local storage
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const cardNumber = document.getElementById('card-number').value;
+
+      const purchaseDetails = {
+        name,
+        email,
+        cardNumber
+      };
+
+      localStorage.setItem('latestPurchase', JSON.stringify(purchaseDetails));
+    }
+  
+    let selectedSubscription = "";
+    const subscriptionPage = document.getElementById("subscription-page");
+    const paymentForm = document.getElementById("payment-form");
+    const paymentSummary = document.getElementById("payment-summary");
+    const cooldownOverlay = document.querySelector(".cooldown-overlay");
+
+    function selectSubscription(subscription) {
+      selectedSubscription = subscription;
+      subscriptionPage.style.display = "none";
+      paymentForm.style.display = "block";
+      paymentSummary.style.display = "none";
+      updateSummary();
+    }
+
+    function updateSummary() {
+      document.getElementById("summary-subscription").textContent = selectedSubscription;
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const amount = getSubscriptionAmount(selectedSubscription);
+      const currency = document.getElementById("currency").value;
+
+      document.getElementById("summary-name").textContent = name;
+      document.getElementById("summary-email").textContent = email;
+      document.getElementById("summary-amount").textContent = currency + " " + amount.toFixed(2);
+    }
+
+    function getSubscriptionAmount(subscription) {
+      switch (subscription) {
+        case "monthly":
+          return 7.99;
+        case "yearly":
+          return 79.99;
+        case "classic":
+          return 1.99;
+        case "normal":
+          return 4.99;
+        default:
+          return 0;
+      }
+    }
+
+    function completePurchase() {
+      const summaryElement = document.getElementById("payment-summary");
+
+      // Shake the screen
+      summaryElement.classList.add("shake");
+
+      // Show the popup window
+      const popupWindow = document.createElement("div");
+      popupWindow.classList.add("popup");
+      popupWindow.textContent = "Congratulations! You have successfully completed the purchase of the subscription. We hope you enjoy it!";
+      document.body.appendChild(popupWindow);
+
+      // Remove the popup window after a delay
+      setTimeout(function () {
+        popupWindow.remove();
+        // Redirect to the billing page
+        window.location.href = "billing.html";
+      }, 5000);
+    }
+
+    function detectCardType() {
+      const cardNumber = document.getElementById("card-number").value;
+      const cardTypeLogo = document.getElementById("payment-method-logo");
+      const cardTypeLabel = document.getElementById("payment-method-name");
+
+      if (/^4/.test(cardNumber)) {
+        cardTypeLogo.src = "visa.png";
+        cardTypeLabel.textContent = "Visa";
+      } else if (/^5[1-5]/.test(cardNumber)) {
+        cardTypeLogo.src = "mastercard.png";
+        cardTypeLabel.textContent = "Mastercard";
+      } else if (/^paypal/.test(cardNumber.toLowerCase())) {
+        cardTypeLogo.src = "paypal.png";
+        cardTypeLabel.textContent = "PayPal";
+      } else {
+        cardTypeLogo.src = "";
+        cardTypeLabel.textContent = "";
+      }
+
+      cardTypeLogo.style.display = cardTypeLabel.textContent ? "inline-block" : "none";
+      cardTypeLabel.style.display = cardTypeLabel.textContent ? "inline-block" : "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        paymentForm.style.display = "none";
+        paymentSummary.style.display = "block";
+        updateSummary();
+        cooldownOverlay.classList.add("show");
+        setTimeout(function () {
+          cooldownOverlay.classList.remove("show");
+          paymentSummary.classList.add("shake");
+          setTimeout(function () {
+            paymentSummary.classList.remove("shake");
+            completePurchase();
+          }, 1000);
+        }, 10000);
+      });
+    });
+  </script>
+</body>
+</html>

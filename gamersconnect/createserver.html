@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Create Server</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .content {
+      background-color: #36393f;
+      color: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .slide-in {
+      animation: slideIn 1s forwards;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container slide-in">
+    <div class="content">
+      <h1>Create a Server</h1>
+      <form id="create-server-form">
+        <div class="form-group">
+          <label for="server-name">Server Name</label>
+          <input type="text" id="server-name" name="server-name" required>
+        </div>
+        <div class="form-group">
+          <label for="server-description">Server Description</label>
+          <textarea id="server-description" name="server-description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="server-region">Server Region</label>
+          <select id="server-region" name="server-region">
+            <option value="us-west">US West</option>
+            <option value="us-east">US East</option>
+            <option value="eu-central">EU Central</option>
+            <option value="eu-west">EU West</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="server-privacy">Server Privacy</label>
+          <select id="server-privacy" name="server-privacy">
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="server-theme">Server Theme</label>
+          <select id="server-theme" name="server-theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="custom">Custom</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="server-verification">Server Verification Level</label>
+          <select id="server-verification" name="server-verification">
+            <option value="none">None</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit" onclick="createServer()">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    function createServer() {
+      // Retrieve the server name and information from the form
+      const serverName = document.getElementById('server-name').value;
+      const serverDescription = document.getElementById('server-description').value;
+      const serverRegion = document.getElementById('server-region').value;
+      const serverPrivacy = document.getElementById('server-privacy').value;
+      const serverTheme = document.getElementById('server-theme').value;
+      const serverVerification = document.getElementById('server-verification').value;
+
+      // Store the server information in local storage or send it to your server
+
+      // Redirect to the server page with the server name as a query parameter
+      window.location.href = `server.html?name=${encodeURIComponent(serverName)}`;
+    }
+  </script>
+</body>
+
+</html>

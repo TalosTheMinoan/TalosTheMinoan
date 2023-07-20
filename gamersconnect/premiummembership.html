@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Premium Membership</title>
+  <style>
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f3f5;
+      margin: 0;
+      padding: 0;
+    }
+    
+    #header {
+      background-color: #7289da;
+      padding: 20px;
+      color: #ffffff;
+      text-align: center;
+    }
+    
+    #content {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+/* Add pulsating animation to the trial button on hover */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button:hover {
+  animation: pulse 1s infinite;
+}
+
+
+
+    .button {
+      display: inline-block;
+      background-color: #7289da;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background-color 0.3s ease-in-out;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .button:hover {
+      background-color: #677bc4;
+    }
+    
+    .feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .feature-icon {
+      margin-right: 10px;
+      width: 20px;
+      height: 20px;
+      fill: #7289da;
+    }
+    
+    .feature-text {
+      color: #555555;
+    }
+    
+    .upgrade-img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      margin-bottom: 20px;
+    }
+    
+    .highlight {
+      background-color: #f5f7fa;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    .highlight-text {
+      color: #7289da;
+      font-size: 18px;
+    }
+    
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .pricing-card {
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f7fa;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      margin: 0 10px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    
+    .pricing-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .pricing-card h3 {
+      margin-top: 0;
+    }
+    
+    .pricing-card p {
+      margin-bottom: 20px;
+    }
+    
+    .pricing-card .price {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .pricing-card:hover .price {
+      color: #7289da;
+    }
+    
+    .comparison {
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .comparison-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .comparison-description {
+      margin-bottom: 20px;
+    }
+    
+    .comparison-item {
+      margin-bottom: 10px;
+    }
+    
+    .comparison-item span {
+      display: inline-block;
+      width: 100px;
+    }
+    
+    .currency-selection {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .currency-selection label {
+      margin-right: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .currency-selection label:hover {
+      transform: scale(1.1);
+    }
+    
+    .price-in-dollars {
+      display: none;
+    }
+    
+    /* Add animation to emoji icons in the comparison table */
+    .comparison-item span .emoji {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .comparison-item:hover span .emoji {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1>Premium Membership</h1>
+  </div>
+  
+  <div id="content">
+    <h2>Unlock Exclusive Features with Premium Membership</h2>
+    <img src="upgrade-img.jpg" alt="Premium Membership" class="upgrade-img">
+    <p>Upgrade to our premium membership to enjoy the following benefits and enhanced features:</p>
+    <ul>
+      <li class="feature">
+        <span class="feature-text">🚀 Access to exclusive chat channels and voice servers</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🎨 Customize your profile with unique badges and emojis</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">📁 Enhanced file sharing options and increased upload limits</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">👑 Priority customer support</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🎉 Exclusive access to premium themes and stickers</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🎥 Increased video and screen sharing quality</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">💾 Expanded server and file storage capacity</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🆕 Early access to new features and updates</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">💰 Special discounts on partner services</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🎟️ Exclusive virtual events and meetups</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">📊 Premium analytics and server management tools</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🌐 Global server access</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">✉️ Priority message delivery</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🔔 Custom notification sounds</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🎁 Exclusive virtual gifts for friends</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">📝 Ability to schedule messages</span>
+      </li>
+      <!-- Additional features with emojis -->
+      <li class="feature">
+        <span class="feature-text">🌟 Special "Premium" badge to showcase your status</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">📅 Calendar integration for event planning</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🔒 End-to-end encryption for enhanced security</span>
+      </li>
+      <li class="feature">
+        <span class="feature-text">🏆 Exclusive competitions and contests</span>
+      </li>
+    </ul>
+    <div class="highlight">
+      <p class="highlight-text">Upgrade today to unlock all the premium features and enhance your experience on our platform!</p>
+  </div>
+    
+    <h2>Subscription Plans</h2>
+    <div class="currency-selection">
+      <label>
+        <input type="radio" name="currency" value="euro" checked> Euro
+      </label>
+      <label>
+        <input type="radio" name="currency" value="dollar"> Dollar
+      </label>
+    </div>
+    
+
+    
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <h3>Monthly Subscription</h3>
+        <p>Billed monthly</p>
+        <p class="price">€7.99</p>
+        <p class="price-in-dollars" style="display: none">$9.99 (Cheaper than Discord!)</p>
+        <a href="payment.html" class="button">Upgrade Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Yearly Subscription</h3>
+        <p>Billed annually</p>
+        <p class="price">€79.99</p>
+        <p class="price-in-dollars" style="display: none">$89.99 (Cheaper than Discord!)</p>
+        <a href="payment.html" class="button">Upgrade Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Classic Subscription</h3>
+        <p>Billed monthly</p>
+        <p class="price">€1.99</p>
+        <p class="price-in-dollars" style="display: none">$2.99 (Cheaper than Discord!)</p>
+        <a href="payment.html" class="button">Upgrade Now</a>
+      </div>
+    </div>
+
+    
+    <div class="trial-offer">
+      <h2>30-Day Free Trial Offer</h2>
+      <p>Try out our premium membership with a 30-day free trial. No charges will be applied during the trial period.</p>
+      <p>Unlock all the premium features and enhance your experience on our platform for 30 days.</p>
+      <div class="highlight">
+        <p class="highlight-text">Start your free trial today!</p>
+        <a href="trial_signup.html" class="button">Start Free Trial</a>
+      </div>
+    </div>
+    
+    
+
+    <div class="comparison">
+      <h2>Subscription Comparison</h2>
+      <div class="comparison-item">
+        <span><span class="emoji">📅</span>Subscription</span>
+        <span>Monthly</span>
+        <span>Yearly</span>
+        <span>Classic</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🔒</span>Access to Premium Features</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>✅</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🎨</span>Custom Badges & Emojis</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>✅</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">📁</span>Enhanced File Sharing</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>✅</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">📞</span>Priority Support</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>✅</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🎉</span>Exclusive Themes & Stickers</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>✅</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🎥</span>High-quality Video & Screen Sharing</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>✅</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">💾</span>Expanded Server & File Storage</span>
+        <span>20 GB</span>
+        <span>50 GB</span>
+        <span>10 GB</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🆕</span>Early Access to Features & Updates</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>✅</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">💰</span>Special Partner Discounts</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🎮</span>Exclusive Virtual Events & Meetups</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">📊</span>Premium Analytics & Tools</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🌐</span>Global Server Access</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>✅</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">✉️</span>Priority Message Delivery</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">⭐</span>Highlighted Profile in Search Results</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🔔</span>Custom Notification Sounds</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>✅</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🎁</span>Exclusive Virtual Gifts for Friends</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">📝</span>Ability to Schedule Messages</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+      <!-- Additional features with emojis -->
+      <div class="comparison-item">
+        <span><span class="emoji">🌟</span>Enhanced Performance & Faster Load Times</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">🎈</span>Exclusive Access to Community Events</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+      <div class="comparison-item">
+        <span><span class="emoji">💡</span>Early Access to Cutting-edge Features</span>
+        <span>✅</span>
+        <span>✅</span>
+        <span>❌</span>
+      </div>
+    </div>    
+  <script>
+    // Currency conversion rates
+    const conversionRates = {
+      euro: 1,
+      dollar: 1.12, // 1 Euro = 1.12 Dollar (Sample conversion rate)
+    };
+
+    // Get currency selection elements
+    const currencyRadios = document.getElementsByName("currency");
+
+    // Add event listener to currency selection radios
+    currencyRadios.forEach(radio => {
+      radio.addEventListener("change", handleCurrencyChange);
+    });
+
+    // Function to handle currency change
+    function handleCurrencyChange(event) {
+      const selectedCurrency = event.target.value;
+      const prices = document.getElementsByClassName("price");
+      const pricesInDollars = document.getElementsByClassName("price-in-dollars");
+
+      // Updated stable prices
+      const stablePrices = {
+        euro: ["€7.99", "€79.99", "€1.99", "€4.99"],
+        dollar: ["$8.99", "$89.99", "$2.49"]
+      };
+
+      for (let i = 0; i < prices.length; i++) {
+        prices[i].textContent = stablePrices[selectedCurrency][i];
+        pricesInDollars[i].textContent = stablePrices["dollar"][i];
+      }
+    }
+  </script>
+</body>
+</html>

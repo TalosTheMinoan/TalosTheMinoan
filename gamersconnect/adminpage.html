@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Page</title>
+  <style>
+    /* Add your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .admin-content {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 1rem;
+    }
+
+    .admin-content h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .admin-content p {
+      margin-bottom: 1rem;
+    }
+
+    .admin-content .admin-feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .admin-feature .emoji {
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+    }
+
+    .admin-feature .feature-text {
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .ban-menu {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .ban-menu label {
+      font-size: 1rem;
+    }
+
+    .ban-menu input[type="text"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .ban-menu button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .ban-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 1rem;
+      border-radius: 4px;
+      z-index: 9999;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Admin Page</h1>
+  </header>
+  <div class="container">
+    <div class="admin-content">
+      <h1>Welcome to the Admin Page</h1>
+      <p>This page is accessible only by moderators and admins.</p>
+      <div class="admin-feature" id="banButton">
+        <span class="emoji">🚫</span>
+        <span class="feature-text">Ban Members</span>
+      </div>
+      <!-- Ban menu (hidden by default) -->
+      <div class="ban-menu" id="banMenu">
+        <label for="usernameInput">Enter the username to ban:</label>
+        <input type="text" id="usernameInput" placeholder="Username">
+        <label for="reasonInput">Reason:</label>
+        <textarea id="reasonInput" placeholder="Enter the reason for banning..."></textarea>
+        <label for="durationSelect">Ban Duration:</label>
+        <select id="durationSelect">
+          <option value="lifetime">Lifetime</option>
+          <option value="custom">Custom</option>
+        </select>
+        <input type="text" id="datepicker" placeholder="Select custom date" style="display: none;">
+        <button onclick="banMember()">Ban User</button>
+      </div>
+      <!-- Ban popup (hidden by default) -->
+      <div class="ban-popup" id="banPopup">
+        <p>Checking...</p>
+      </div>
+
+      <div class="admin-feature" id="broadcastButton">
+        <span class="emoji">📢</span>
+        <span class="feature-text">Broadcast Message</span>
+      </div>
+      <!-- Broadcast menu (hidden by default) -->
+      <div class="ban-menu" id="broadcastMenu" style="display: none;">
+        <label for="broadcastInput">Enter the broadcast message:</label>
+        <textarea id="broadcastInput" placeholder="Enter your broadcast message here..."></textarea>
+        <label for="userSelect">Select user to broadcast to:</label>
+        <select id="userSelect">
+          <option value="all">All Members</option>
+          <option value="user123">User123</option>
+          <option value="baduser">Bad User</option>
+          <option value="spammyuser">Spammy User</option>
+          <!-- Add more users here as needed -->
+        </select>
+        <button onclick="sendBroadcast()">Send Broadcast</button>
+      </div>
+
+      <div class="admin-feature" id="viewBannedButton">
+        <span class="emoji">🛡️</span>
+        <span class="feature-text">View Banned Users</span>
+      </div>
+      <!-- View Banned Users (hidden by default) -->
+      <div class="ban-menu" id="viewBannedMenu" style="display: none;">
+        <p>List of Banned Users:</p>
+        <ul id="bannedUsersList"></ul>
+      </div>
+
+      <div class="admin-feature" id="blockIPButton">
+        <span class="emoji">🔒</span>
+        <span class="feature-text">Block IP Address</span>
+      </div>
+      <!-- Block IP menu (hidden by default) -->
+      <div class="ban-menu" id="blockIPMenu" style="display: none;">
+        <label for="ipInput">Enter the IP address to block:</label>
+        <input type="text" id="ipInput" placeholder="IP Address">
+        <label for="blockReasonInput">Reason:</label>
+        <textarea id="blockReasonInput" placeholder="Enter the reason for blocking..."></textarea>
+        <button onclick="blockIP()">Block IP</button>
+      </div>
+
+      <!-- New feature: User Suspension and Revocation -->
+      <div class="admin-feature" id="suspendButton">
+        <span class="emoji">⏸️</span>
+        <span class="feature-text">Suspend/Revoke User</span>
+      </div>
+      <!-- Suspension/Revocation menu (hidden by default) -->
+      <div class="ban-menu" id="suspendMenu" style="display: none;">
+        <label for="suspendUsernameInput">Enter the username to suspend/Revoke:</label>
+        <input type="text" id="suspendUsernameInput" placeholder="Username">
+        <label for="suspendSelect">Select action:</label>
+        <select id="suspendSelect">
+          <option value="suspend">Suspend</option>
+          <option value="revoke">Revoke</option>
+        </select>
+        <label for="suspendReasonInput">Reason:</label>
+        <textarea id="suspendReasonInput" placeholder="Enter the reason for suspension/revocation..."></textarea>
+        <button onclick="suspendOrRevokeUser()">Suspend/Revoke User</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Function to handle the change event of the durationSelect dropdown
+    document.getElementById('durationSelect').addEventListener('change', function () {
+      const customDateInput = document.getElementById('datepicker');
+      if (this.value === 'custom') {
+        customDateInput.style.display = 'block';
+      } else {
+        customDateInput.style.display = 'none';
+      }
+    });
+
+    // Function to handle the click event and show/hide the ban menu
+    document.getElementById('banButton').addEventListener('click', function () {
+      const banMenu = document.getElementById('banMenu');
+      if (banMenu.style.display === 'none') {
+        banMenu.style.display = 'block';
+      } else {
+        banMenu.style.display = 'none';
+      }
+    });
+
+    // Function to handle the click event and show/hide the broadcast menu
+    document.getElementById('broadcastButton').addEventListener('click', function () {
+      const broadcastMenu = document.getElementById('broadcastMenu');
+      if (broadcastMenu.style.display === 'none') {
+        broadcastMenu.style.display = 'block';
+      } else {
+        broadcastMenu.style.display = 'none';
+      }
+    });
+
+    // Function to handle the click event and show/hide the view banned users menu
+    document.getElementById('viewBannedButton').addEventListener('click', function () {
+      const viewBannedMenu = document.getElementById('viewBannedMenu');
+      if (viewBannedMenu.style.display === 'none') {
+        viewBannedMenu.style.display = 'block';
+      } else {
+        viewBannedMenu.style.display = 'none';
+      }
+    });
+
+    // Function to handle the click event and show/hide the block IP menu
+    document.getElementById('blockIPButton').addEventListener('click', function () {
+      const blockIPMenu = document.getElementById('blockIPMenu');
+      if (blockIPMenu.style.display === 'none') {
+        blockIPMenu.style.display = 'block';
+      } else {
+        blockIPMenu.style.display = 'none';
+      }
+    });
+
+    // Function to handle the click event and show/hide the suspension/revocation menu
+    document.getElementById('suspendButton').addEventListener('click', function () {
+      const suspendMenu = document.getElementById('suspendMenu');
+      if (suspendMenu.style.display === 'none') {
+        suspendMenu.style.display = 'block';
+      } else {
+        suspendMenu.style.display = 'none';
+      }
+    });
+
+    // Simulated list of banned users (replace with your actual backend data)
+    const bannedUsersList = document.getElementById('bannedUsersList');
+    const bannedUsers = ['user123', 'baduser', 'spammyuser']; // Replace with your actual banned usernames list
+    bannedUsers.forEach((user) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = user;
+      bannedUsersList.appendChild(listItem);
+    });
+
+    // Function to handle the ban action
+    function banMember() {
+      const username = document.getElementById('usernameInput').value.trim();
+      const reason = document.getElementById('reasonInput').value.trim();
+      const duration = document.getElementById('durationSelect').value;
+
+      if (username === '' || reason === '') {
+        alert('Please enter a valid username and reason for banning.');
+        return;
+      }
+
+      if (duration === 'custom') {
+        const customDate = document.getElementById('datepicker').value.trim();
+        if (customDate === '') {
+          alert('Please select a valid custom date.');
+          return;
+        }
+        // Use the customDate value to implement the custom ban logic as needed.
+        // For now, we'll show an alert as a demonstration.
+        alert(`User ${username} has been banned with the reason: ${reason} for the custom duration: ${customDate}`);
+      } else {
+        // Implement the logic for handling lifetime ban or other pre-defined duration.
+        // For now, we'll show an alert as a demonstration.
+        alert(`User ${username} has been banned with the reason: ${reason} for the duration: ${duration}`);
+      }
+
+      // Reset the form fields after banning.
+      document.getElementById('usernameInput').value = '';
+      document.getElementById('reasonInput').value = '';
+      document.getElementById('durationSelect').value = 'lifetime';
+      document.getElementById('datepicker').value = '';
+      document.getElementById('banMenu').style.display = 'none';
+    }
+
+    // Function to handle the block IP action
+    function blockIP() {
+      const ip = document.getElementById('ipInput').value.trim();
+      const blockReason = document.getElementById('blockReasonInput').value.trim();
+
+      if (ip === '' || blockReason === '') {
+        alert('Please enter a valid IP address and reason for blocking.');
+        return;
+      }
+
+      // Use the IP address and blockReason values to implement the IP blocking logic as needed.
+      // For now, we'll show an alert as a demonstration.
+      alert(`IP address ${ip} has been blocked with the reason: ${blockReason}`);
+
+      // Reset the form fields after blocking.
+      document.getElementById('ipInput').value = '';
+      document.getElementById('blockReasonInput').value = '';
+      document.getElementById('blockIPMenu').style.display = 'none';
+    }
+
+    // Function to handle the suspend/revocation action
+    function suspendOrRevokeUser() {
+      const username = document.getElementById('suspendUsernameInput').value.trim();
+      const action = document.getElementById('suspendSelect').value;
+      const reason = document.getElementById('suspendReasonInput').value.trim();
+
+      if (username === '' || reason === '') {
+        alert('Please enter a valid username and reason for suspension/revocation.');
+        return;
+      }
+
+      // Implement the logic for suspending or revoking the user based on the action selected.
+      // For now, we'll show an alert as a demonstration.
+      if (action === 'suspend') {
+        alert(`User ${username} has been suspended with reason: ${reason}`);
+      } else if (action === 'revoke') {
+        alert(`User ${username} has been revoked with reason: ${reason}`);
+      }
+
+      // Reset the form fields after suspension/revocation.
+      document.getElementById('suspendUsernameInput').value = '';
+      document.getElementById('suspendSelect').value = 'suspend';
+      document.getElementById('suspendReasonInput').value = '';
+      document.getElementById('suspendMenu').style.display = 'none';
+    }
+  </script>
+</body>
+
+
+</html>

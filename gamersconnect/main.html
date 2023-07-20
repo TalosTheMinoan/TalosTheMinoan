@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome back</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f3f5;
+    }
+
+    #header {
+      background-color: #7289da;
+      padding: 20px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    #content {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #f2f3f5;
+    }
+
+    #friend-list {
+      width: calc(70% - 10px);
+    }
+
+    #server-list {
+      width: calc(30% - 10px);
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #welcome-message {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #666666;
+    }
+
+    .friend-card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .friend-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+
+    .friend-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .server-card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .server-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+
+    .server-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    #add-friend-button {
+      padding: 12px 24px;
+      border-radius: 5px;
+      background-color: #7289da;
+      color: #ffffff;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #add-friend-button:hover {
+      background-color: #5b6eae;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <h1>Welcome to My App</h1>
+  </div>
+
+  <div id="content">
+    <div id="friend-list">
+      <div id="welcome-message">
+        <p>Welcome back, John Doe!</p>
+      </div>
+
+      <div class="friend-card">
+        <img class="friend-avatar" src="friend1.png" alt="Friend Avatar">
+        <p class="friend-name">Friend 1</p>
+      </div>
+      <div class="friend-card">
+        <img class="friend-avatar" src="friend2.png" alt="Friend Avatar">
+        <p class="friend-name">Friend 2</p>
+      </div>
+      <!-- Add more friend cards here -->
+
+      <button id="add-friend-button">Add Friend</button>
+    </div>
+
+    <div id="server-list">
+      <h2>Your Servers</h2>
+
+      <div class="server-card">
+        <img class="server-icon" src="server1.png" alt="Server Icon">
+        <p class="server-name">Server 1</p>
+      </div>
+      <div class="server-card">
+        <img class="server-icon" src="server2.png" alt="Server Icon">
+        <p class="server-name">Server 2</p>
+      </div>
+      <!-- Add more server cards here -->
+    </div>
+  </div>
+
+  <script>
+    const addFriendButton = document.getElementById('add-friend-button');
+
+    addFriendButton.addEventListener('click', () => {
+      // Handle add friend button click event
+      // ...
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Voice Call</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #36393f;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #36393f;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .call-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background-color: #7289da;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .call-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .caller-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .call-status {
+      font-size: 14px;
+    }
+
+    .call-buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .call-button {
+      padding: 12px 24px;
+      border-radius: 5px;
+      background-color: #ffffff;
+      color: #7289da;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .call-button:hover {
+      background-color: #ebebeb;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="call-box">
+      <h1>Incoming Voice Call</h1>
+      <div class="call-info">
+        <span class="caller-name">John Doe</span>
+        <span class="call-status">is calling you...</span>
+      </div>
+      <div class="call-buttons">
+        <button class="call-button" onclick="answerCall()">Answer</button>
+        <button class="call-button" onclick="declineCall()">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function answerCall() {
+      // Handle logic for answering the call
+      // For example, you can start a media stream and establish a connection with the caller
+
+      // Get access to user's microphone and camera
+      navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+        .then(function (stream) {
+          // Code to handle the stream and establish a connection with the caller
+          console.log('Call answered successfully');
+        })
+        .catch(function (error) {
+          // Handle errors while accessing user's media devices
+          console.error('Failed to answer the call:', error);
+        });
+    }
+
+    function declineCall() {
+      // Handle logic for declining the call
+      // For example, you can display a message or perform any cleanup tasks before ending the call.
+
+      // Redirect back to the main.html page
+      window.location.href = "main.html";
+    }
+  </script>
+</body>
+
+</html>

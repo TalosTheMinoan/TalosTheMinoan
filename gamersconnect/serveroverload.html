@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Server Overload</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f2f2f2;
+    }
+    
+    h1 {
+      color: #FF0000;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      color: #555555;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .joke-container {
+      border: 2px solid #555555;
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 20px auto;
+      width: 500px;
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .joke-text {
+      font-size: 22px;
+      color: #333333;
+      margin-bottom: 20px;
+    }
+    
+    .refresh-button {
+      background-color: #FF0000;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    .refresh-button:hover {
+      background-color: #CC0000;
+    }
+    
+    img {
+      width: 250px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .social-icon {
+      margin: 0 10px;
+    }
+    
+    .video-container {
+      position: relative;
+      width: 560px;
+      height: 315px;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+    
+    .video-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .cta-button {
+      background-color: #FF0000;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      margin-top: 30px;
+    }
+    
+    .cta-button:hover {
+      background-color: #CC0000;
+    }
+  </style>
+  <script>
+    // Array of server down jokes
+    var serverDownJokes = [
+      "Why did the server go to therapy? It had too many breakdowns!",
+      "What do you call a server that's always tired? A sleepy server!",
+      "Why did the server bring a ladder? To reach its high bandwidth!",
+      "What did one server say to the other? I think I need a byte!",
+      "Why did the server get an award? It had the best uptime!",
+      "What's a server's favorite type of music? Heavy metal!",
+      "Why was the server cold? Someone left the Windows open!",
+      "What's a server's favorite sport? Socket ball!",
+      "Why was the server always happy? It found its perfect Java!",
+      "What do you call a server that tells jokes? A pun-ning server!",
+      "Why did the server start a band? It had great latency!",
+      "What's a server's favorite TV show? The Big Bang Theorem!",
+      "Why did the server become an artist? It wanted to draw more traffic!",
+      "What do you call a server that can sing? An opera server!",
+      "Why was the server always first in line? It had the fastest queues!",
+      "What's a server's favorite dance move? The disk-o!",
+      "Why did the server go on a diet? It wanted to shed some bytes!",
+      "What do you get if you cross a server with a cat? An I.T. purr-fessional!",
+      "Why did the server go to space? It wanted to explore the cloud!",
+      "What's a server's favorite board game? Router Rivals!",
+      "Why did the server bring an umbrella? In case of a data storm!",
+      "What's a server's favorite vegetable? RAM-en!",
+      "Why did the server go to school? To improve its server-ability!",
+      "What's a server's favorite ice cream flavor? Cookie Dough-nloading!",
+      "Why did the server visit the dentist? To fix its Java-cavity!",
+      "What do you call a server that tells scary stories? A spook-server!",
+      "Why did the server enroll in cooking classes? To become a master server-chef!",
+      "What's a server's favorite outdoor activity? Cloud gazing!",
+      "Why did the server go broke? It spent all its cache!",
+      "What do you call a server that loves to exercise? A fitness server!",
+      "Why did the server bring a map? To navigate through the data jungle!",
+      "What's a server's favorite time of day? Server-ten o'clock!",
+      "Why did the server start a garden? To grow data-berry plants!",
+      "What do you call a server that loves to dance? A disco server!",
+      "Why did the server start a band? It wanted to rock the data center!",
+      "What's a server's favorite movie? The Matrix Reloaded!",
+      "Why did the server go on vacation? To recharge its batteries!",
+      "What do you call a server that can do magic tricks? A server-wizard!",
+      "Why did the server bring a beach towel? To catch some Wi-Fi waves!",
+      "Why did the server become a stand-up comedian? It had a great sense of humor!",
+      "What's a server's favorite party game? Ping pong!",
+      "Why did the server become a magician? It knew how to disappear from the network!",
+      "What do you call a server that loves to sing? An MP3 server!",
+      "Why did the server start a book club? It loved to read the data!",
+      "What's a server's favorite dessert? Data pudding!",
+      "Why did the server join a rock band? It wanted to play heavy metal servers!",
+      "What do you call a server that loves to travel? A globe-trotting server!",
+      "Why did the server become a race car driver? It had a need for server-speed!",
+      "What's a server's favorite superhero? The Flash, because it's all about speed!"
+    ];
+    
+    // Function to display a random joke
+    function displayRandomJoke() {
+      var randomIndex = Math.floor(Math.random() * serverDownJokes.length);
+      var jokeElement = document.getElementById('joke');
+      jokeElement.textContent = serverDownJokes[randomIndex];
+    }
+    
+    // Display initial random joke on page load
+    window.onload = displayRandomJoke;
+    
+    // Function to share the page on Twitter
+    function shareOnTwitter() {
+      var tweetText = "Check out these hilarious server down jokes! #ServerMaintenance #Jokes";
+      var tweetUrl = "https://example.com"; // Replace with your website URL
+      var twitterUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweetText) + "&url=" + encodeURIComponent(tweetUrl);
+      window.open(twitterUrl, "_blank");
+    }
+  </script>
+</head>
+<body>
+  <img src="images/server-overload.png" alt="Server overload" style="width: 300px; height: auto;">
+  <h1>Oops! The servers are currently experiencing high traffic.</h1>
+  <p>We apologize for the inconvenience. Our team is working diligently to resolve the issue as quickly as possible. In the meantime, have a laugh with these jokes:</p>
+  
+  <div class="joke-container">
+    <p class="joke-text" id="joke">Here's a server overload joke for you:</p>
+    <button class="refresh-button" onclick="displayRandomJoke()">Tell me another Joke</button>
+  </div>
+  
+  <div class="social-icons">
+    <a class="social-icon" href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+      <img src="images/twitter-icon.png" alt="Twitter" style="width: 30px; height: 30px;">
+    </a>
+    <a class="social-icon" href="https://youtube.com/user/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">
+      <img src="images/youtube-icon.png" alt="YouTube" style="width: 30px; height: 30px;">
+    </a>
+  </div>
+  
+  <button class="cta-button">Notify Me When It's Back</button>
+</body>
+</html>

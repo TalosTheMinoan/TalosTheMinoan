@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .slide-in {
+      animation: slideIn 1s forwards;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%) translateY(50%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .error {
+      color: red;
+      margin-top: 5px;
+    }
+
+    .notification {
+      display: none;
+      background-color: #7289da;
+      color: #ffffff;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+    }
+
+    .loading {
+      display: none;
+      color: #7289da;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container slide-in">
+    <div class="content">
+      <h1>Registration</h1>
+      <form id="registration-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+          <div id="password-strength"></div>
+          <div id="password-error" class="error"></div>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+          <div id="password-match-error" class="error"></div>
+        </div>
+        <div class="form-group">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+      <p class="discord-terms">By registering, you agree to our <a href="terms_of_service.html">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+
+  <div id="notification" class="notification"></div>
+  <div id="loading" class="loading">Redirecting to login page...</div>
+
+  <script src="app.js"></script>
+  <script>
+    const registrationForm = document.getElementById('registration-form');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirm-password');
+    const passwordStrengthIndicator = document.getElementById('password-strength');
+    const passwordError = document.getElementById('password-error');
+    const passwordMatchError = document.getElementById('password-match-error');
+    const notification = document.getElementById('notification');
+    const loadingMessage = document.getElementById('loading');
+
+    registrationForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const password = passwordInput.value;
+      const confirmPassword = confirmPasswordInput.value;
+      const strength = calculatePasswordStrength(password);
+
+      if (strength < 30) {
+        showNotification('Password is too weak');
+        passwordError.textContent = 'Password is too weak';
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        showNotification('Passwords do not match');
+        passwordMatchError.textContent = 'Passwords do not match';
+        return;
+      }
+
+      registrationForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  const registrationData = {
+    username: username,
+    email: email,
+    password: password
+  };
+
+  // Send the registration data to a backend server
+  fetch('/api/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(registrationData)
+  })
+    .then(response => {
+      if (response.ok) {
+        // Assuming the registration is successful, display a success message
+        showNotification('Registration successful! Redirecting to login page...');
+
+        showLoadingMessage();
+
+        // Simulating a delay of 3 seconds for demonstration purposes
+        setTimeout(() => {
+          // Redirect to the login page
+          window.location.href = 'login.html';
+        }, 3000);
+      } else {
+        // Handle registration errors or display an appropriate error message
+        showNotification('Registration failed. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      showNotification('An error occurred. Please try again later.');
+    });
+});
+
+
+      showLoadingMessage();
+
+      // Simulating a delay of 3 seconds for demonstration purposes
+      setTimeout(() => {
+        // Redirect to the login page
+        window.location.href = 'login.html';
+      }, 3000);
+    });
+
+    passwordInput.addEventListener('input', updatePasswordStrength);
+    confirmPasswordInput.addEventListener('input', clearPasswordMatchError);
+
+    function updatePasswordStrength() {
+      const password = passwordInput.value;
+      const strength = calculatePasswordStrength(password);
+      const strengthText = getStrengthText(strength);
+      const strengthColor = getStrengthColor(strength);
+
+      passwordStrengthIndicator.textContent = strengthText;
+      passwordStrengthIndicator.style.color = strengthColor;
+
+      if (password === '') {
+        passwordError.textContent = '';
+      } else if (strength < 30) {
+        passwordError.textContent = 'Password is too weak';
+      } else {
+        passwordError.textContent = '';
+      }
+    }
+
+    function calculatePasswordStrength(password) {
+      const passwordLength = password.length;
+      const minimumLength = 8; // Set the minimum password length required for a strong password
+
+      if (passwordLength < minimumLength) {
+        return 0; // Weak password
+      } else {
+        const strength = (passwordLength / minimumLength) * 100; // Calculate the strength as a percentage based on the length
+        return Math.min(strength, 100); // Maximum strength is 100
+      }
+    }
+
+    function getStrengthText(strength) {
+      if (strength < 30) {
+        return 'Weak';
+      } else if (strength < 70) {
+        return 'Medium';
+      } else {
+        return 'Strong';
+      }
+    }
+
+    function getStrengthColor(strength) {
+      if (strength < 30) {
+        return "#ff0000"; // Red color for weak password
+      } else if (strength < 70) {
+        return "#f9c600"; // Yellow color for medium password
+      } else {
+        return "#00ff00"; // Green color for strong password
+      }
+    }
+
+    function showNotification(message) {
+      notification.textContent = message;
+      notification.classList.add('show');
+
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+
+    function showLoadingMessage() {
+      loadingMessage.style.display = 'block';
+    }
+
+    function clearPasswordMatchError() {
+      passwordMatchError.textContent = '';
+    }
+  </script>
+</body>
+
+</html>
