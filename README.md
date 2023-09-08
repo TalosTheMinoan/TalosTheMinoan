@@ -25,12 +25,12 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: i am creating an licence system
 
 - 
-[![Anurag’s github stats](https://github-readme-stats.vercel.app/api?username=TalosTheMinoan](https://github.com/TalosTheMinoan)
+)
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yushi1007&layout=compact)](https://github.com/TalosTheMinoan 
 
 
-![Github Trophy](https://github-profile-trophy.vercel.app/?username=TalosTheMinoan&theme=discord)
+
 
 [![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=TalosTheMinoan&theme=blueberry&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats)
 
