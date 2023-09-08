@@ -2,4 +2,4 @@
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
 </div>
 
-### :fire: My Stats
+[![GitHub Streak](https://streak-stats.demolab.com?user=Talos&theme=dark)](https://git.io/streak-stats)
