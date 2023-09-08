@@ -23,7 +23,11 @@ Here are some ideas to get you started:
 - 📫 How to reach me: reach me on discord talosminoan
 - 😄 Pronouns: he/him
 - ⚡ Fun fact: i am creating an licence system
--->
+
+- 
+[![Anurag’s github stats](https://github-readme-stats.vercel.app/api?username=TalosTheMinoan](https://github.com/TalosTheMinoan)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yushi1007&layout=compact)](https://github.com/TalosTheMinoan 
 
 
 ![Github Trophy](https://github-profile-trophy.vercel.app/?username=TalosTheMinoan&theme=discord)
