@@ -24,3 +24,6 @@ Here are some ideas to get you started:
 - 😄 Pronouns: he/him
 - ⚡ Fun fact: i am creating an licence system
 -->
+
+
+![Github Trophy](https://github-profile-trophy.vercel.app/?username=TalosTheMinoan&theme=discord)
