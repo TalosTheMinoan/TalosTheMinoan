@@ -11,6 +11,9 @@
     <img alt="GitHub followers" src="https://img.shields.io/github/followers/codemaker2015?color=yellow&logo=github">
   </a>
 
+  
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=codemaker2015&show_icons=true&theme=radical)
+
 
 ### Hi there 👋<!--
 **Talos** is a ✨ _special_ ✨ repository because its `README.md` 
