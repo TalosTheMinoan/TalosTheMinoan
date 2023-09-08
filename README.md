@@ -1,5 +1,10 @@
-<div id="header" align="center">
-  <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
-</div>
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=Talos&theme=dark)](https://git.io/streak-stats)
+### Hi there 👋<!--
+**Talos** is a ✨ _special_ ✨ repository because its `README.md` 
+Here are some ideas to get you started:
+- 🔭 I’m currently working on an licence system
+- 🌱 I’m currently learning pythin
+- 💬 Ask me about ...
+- 📫 How to reach me: reach me on discord talosminoan
+- 😄 Pronouns: he/him
+- ⚡ Fun fact: i am creating an licence system
+-->
