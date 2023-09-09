@@ -27,7 +27,7 @@ Here are some ideas to get you started:
 - 
 )
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yushi1007&layout=compact)](https://github.com/TalosTheMinoan 
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TalosTheMinoan&layout=compact)]
 
 
 
