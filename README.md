@@ -16,16 +16,17 @@
 
 
 ### Hi there 👋<!--
-**Talos** is a ✨ _special_ ✨ repository because its `README.md` 
-Here are some ideas to get you started:
-- 🔭 I’m currently working on an licence system
-- 🌱 I’m currently learning python
-- 📫 How to reach me: reach me on discord talosminoan
-- 😄 Pronouns: he/him
-- ⚡ Fun fact: i am creating an licence system
+🚀 Expert UI Designer & Unreal Engine 5 Developer
+🎨 Crafting immersive experiences through design & Unreal Engine wizardry
+💡 UI/UX Design | Unreal Engine 5 | 3D Modeling | Storytelling
+🏆 Award-winning contributions to acclaimed game titles
+🎮 Currently crafting a futuristic VR adventure in Unreal Engine 5
+🎙️ Catch me on Discord: talosminoan
+🛠️ Also dabbling in AR development and AI integration
+🌟 Balancing aesthetics and functionality for user-centric engagement
+🤝 Let's collaborate and create amazing experiences together!
+🌍 Exploring the world and gaming when not coding!
 
-- 
-)
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TalosTheMinoan&layout=compact)]
 
