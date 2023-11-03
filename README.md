@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-I'm [Your Name], a passionate developer and tech enthusiast. Welcome to my GitHub profile!
+I'm Talos, a passionate developer and tech enthusiast. Welcome to my GitHub profile!
 
 ![Visitor Count](https://profile-counter.glitch.me/TalosTheMinoan/count.svg)
 
