@@ -24,9 +24,12 @@ I'm [Your Name], a passionate developer and tech enthusiast. Welcome to my GitHu
 [![GitHub stats](https://github-readme-stats.vercel.app/api?username=TalosTheMinoan)](https://github.com/TalosTheMinoan)
 
 #### 💼 My top projects:
-1. [Project 1 name](https://github.com/TalosTheMinoan/Project1)
-2. [Project 2 name](https://github.com/TalosTheMinoan/Project2)
-3. [Project 3 name](https://github.com/TalosTheMinoan/Project3)
+1. [Monitor](https://github.com/TalosTheMinoan/Monitor)
+   - [Description of Project 1]
+2. [Scrapp-websites](https://github.com/TalosTheMinoan/Scrapp-websites)
+   - [Description of Project 2]
+3. [Shortenurl](https://github.com/TalosTheMinoan/Shortenurl)
+   - [Description of Project 3]
 
 #### 🚀 Upcoming projects:
 - [List any projects you plan to work on in the near future]
