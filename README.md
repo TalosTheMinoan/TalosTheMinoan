@@ -14,7 +14,9 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 3. [Shortenurl](https://github.com/TalosTheMinoan/Shortenurl)
 4. [Maze Generator](https://github.com/TalosTheMinoan/Random-maze-generator)
 
-
+#### 💼 My latest projects projects:
+1. [Toggle engine (fivem script)](https://github.com/TalosTheMinoan/Toggle-engine)
+2. [Change time (fivem script](https://github.com/TalosTheMinoan/Change-time)
 
 #### 😄 Fun fact:
 - I enjoy creating open-source programs.
