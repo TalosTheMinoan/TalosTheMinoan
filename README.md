@@ -20,6 +20,7 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 
 #### 😄 Fun fact:
 - I enjoy creating open-source programs.
+- working on : an fivem admin menu
 
 #### 📫 How to reach me:
 - Discord: talosminoan (He/Him)
