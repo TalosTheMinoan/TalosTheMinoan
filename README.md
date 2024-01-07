@@ -15,7 +15,7 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 3. [Shortenurl](https://github.com/TalosTheMinoan/Shortenurl)
 4. [Maze Generator](https://github.com/TalosTheMinoan/Random-maze-generator)
 
-#### 💼 My latest projects projects:
+#### 💼 My latest projects:
 1. [Check for blacklisted cars (fivem script)](https://github.com/TalosTheMinoan/Blacklist-Vehicles)
 2. [Toggle engine (fivem script)](https://github.com/TalosTheMinoan/Toggle-engine)
 3. [Change time (fivem script](https://github.com/TalosTheMinoan/Change-time)
