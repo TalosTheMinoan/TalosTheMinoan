@@ -7,6 +7,7 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 #### 🌱 I’m currently learning:
 - Python
 - HTML
+- Lua
 
 #### 💼 My top projects:
 1. [Monitor](https://github.com/TalosTheMinoan/Monitor)
