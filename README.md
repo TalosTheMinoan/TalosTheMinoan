@@ -10,7 +10,7 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 - Lua
 
 #### 💼 My top projects:
-1. [Monitor](https://github.com/TalosTheMinoan/Monitor)
+1. [Instagram Checker](https://github.com/TalosTheMinoan/instagramchecker)
 2. [Scrapp-websites](https://github.com/TalosTheMinoan/Scrapp-websites)
 3. [Shortenurl](https://github.com/TalosTheMinoan/Shortenurl)
 4. [Maze Generator](https://github.com/TalosTheMinoan/Random-maze-generator)
