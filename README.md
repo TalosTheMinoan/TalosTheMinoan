@@ -17,10 +17,11 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 
    
 #### 💼 My latest projects:
-1. [Check ping command (fivem script)](https://github.com/TalosTheMinoan/Check-ping)
-2. [Check for blacklisted cars (fivem script)](https://github.com/TalosTheMinoan/Blacklist-Vehicles)
-3. [Toggle engine (fivem script)](https://github.com/TalosTheMinoan/Toggle-engine)
-4. [Change time (fivem script](https://github.com/TalosTheMinoan/Change-time)
+1. [System Information](https://github.com/TalosTheMinoan/System-Information)
+2. [Check ping command (fivem script)](https://github.com/TalosTheMinoan/Check-ping)
+3. [Check for blacklisted cars (fivem script)](https://github.com/TalosTheMinoan/Blacklist-Vehicles)
+4. [Toggle engine (fivem script)](https://github.com/TalosTheMinoan/Toggle-engine)
+5. [Change time (fivem script](https://github.com/TalosTheMinoan/Change-time)
 
 #### 😄 Fun fact:
 - I enjoy creating open-source programs.
