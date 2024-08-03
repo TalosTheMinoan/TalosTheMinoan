@@ -17,7 +17,7 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 
    
 #### 💼 My latest projects:
-1.[LoadingScreen (fivem script)](https://github.com/TalosTheMinoan/LoadingScreen)
+1. [LoadingScreen (fivem script)](https://github.com/TalosTheMinoan/LoadingScreen)
 2. [System Information](https://github.com/TalosTheMinoan/System-Information)
 3. [Check ping command (fivem script)](https://github.com/TalosTheMinoan/Check-ping)
 4. [Check for blacklisted cars (fivem script)](https://github.com/TalosTheMinoan/Blacklist-Vehicles)
