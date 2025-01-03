@@ -17,7 +17,7 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 
    
 #### 💼 My latest projects:
-1. [PlayerMood (fivem script)](https://github.com/TalosTheMinoan/Playermood)
+1. [PlayerMoods (fivem script)](https://github.com/TalosTheMinoan/Playermood)
 2. [LoadingScreen (fivem script)](https://github.com/TalosTheMinoan/LoadingScreen)
 3. [System Information](https://github.com/TalosTheMinoan/System-Information)
 4. [Check ping command (fivem script)](https://github.com/TalosTheMinoan/Check-ping)
