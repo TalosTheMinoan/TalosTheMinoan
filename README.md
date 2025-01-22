@@ -17,13 +17,14 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 
    
 #### 💼 My latest projects:
-1. [PlayerMoods (fivem script)](https://github.com/TalosTheMinoan/Playermood)
-2. [LoadingScreen (fivem script)](https://github.com/TalosTheMinoan/LoadingScreen)
-3. [System Information](https://github.com/TalosTheMinoan/System-Information)
-4. [Check ping command (fivem script)](https://github.com/TalosTheMinoan/Check-ping)
-5. [Check for blacklisted cars (fivem script)](https://github.com/TalosTheMinoan/Blacklist-Vehicles)
-6. [Toggle engine (fivem script)](https://github.com/TalosTheMinoan/Toggle-engine)
-7. [Change time (fivem script)](https://github.com/TalosTheMinoan/Change-time)
+1. [Talos_rental (fivem script)](https://github.com/TalosTheMinoan/Talos_rental)
+2. [PlayerMoods (fivem script)](https://github.com/TalosTheMinoan/Playermood)
+3. [LoadingScreen (fivem script)](https://github.com/TalosTheMinoan/LoadingScreen)
+4. [System Information](https://github.com/TalosTheMinoan/System-Information)
+5. [Check ping command (fivem script)](https://github.com/TalosTheMinoan/Check-ping)
+6. [Check for blacklisted cars (fivem script)](https://github.com/TalosTheMinoan/Blacklist-Vehicles)
+7. [Toggle engine (fivem script)](https://github.com/TalosTheMinoan/Toggle-engine)
+8. [Change time (fivem script)](https://github.com/TalosTheMinoan/Change-time)
 
 #### 😄 Fun fact:
 - I enjoy creating open-source programs.
