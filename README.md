@@ -5,10 +5,11 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 # My timezone
 
 <div align="center">
-  
-[![Time](https://time.is/Athens/widget.min.js)](https://time.is/Athens)
+
+[![Time in Greece](https://img.shields.io/badge/dynamic/json?label=Time%20in%20Greece&query=datetime&url=https://worldtimeapi.org/api/timezone/Europe/Athens&color=blue)](https://time.is/Greece)
 
 </div>
+
 
 ![Visitor Count](https://profile-counter.glitch.me/TalosTheMinoan/count.svg)
 
