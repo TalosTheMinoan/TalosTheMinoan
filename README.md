@@ -34,12 +34,21 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 7. [Toggle engine (fivem script)](https://github.com/TalosTheMinoan/Toggle-engine)
 8. [Change time (fivem script)](https://github.com/TalosTheMinoan/Change-time)
 
-#### 😄 Fun fact:
-- I enjoy creating open-source programs.
-- working on : an fivem admin menu
+## 🌟 Current Projects
+- 🔧 Working on: An advanced FiveM admin menu
+- 📚 Learning: Advanced scripting techniques
+- 🤝 Open to: Collaborations and new projects
 
-#### 📫 How to reach me:
-- Discord: talosminoan (He/Him)
-- Email:   dev@codingdaily.eu
+## 💡 Fun Facts
+- 🎯 I'm passionate about creating open-source programs
+- 🌍 Love contributing to the developer community
+- 🎮 Dedicated to improving the FiveM player experience
 
-🎉 Thanks for visiting my GitHub profile. Have a great day!
+## 📫 Connect With Me
+- 💬 Discord: talosminoan (He/Him)
+- 📧 Email: dev@codingdaily.eu
+
+<div align="center">
+
+### 🎉 Thanks for visiting my GitHub profile! 
+### Feel free to explore my repositories and don't forget to leave a ⭐ if you find something interesting!
