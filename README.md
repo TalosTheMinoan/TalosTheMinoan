@@ -2,6 +2,14 @@
 
 I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my GitHub profile!
 
+# My timezone
+
+<div align="center">
+  
+[![Time](https://time.is/Athens/widget.min.js)](https://time.is/Athens)
+
+</div>
+
 ![Visitor Count](https://profile-counter.glitch.me/TalosTheMinoan/count.svg)
 
 #### 🌱 I’m currently learning:
