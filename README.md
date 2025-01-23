@@ -2,7 +2,6 @@
 
 I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my GitHub profile!
 
-# My timezone
 
 <div align="center">
 
