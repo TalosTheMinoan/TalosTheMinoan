@@ -46,7 +46,7 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 
 ## 📫 Connect With Me
 - 💬 Discord: talosminoan (He/Him)
-- 📧 Email: dev@codingdaily.eu
+- 📧 Email: info@codingdaily.eu
 
 <div align="center">
 
