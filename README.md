@@ -25,14 +25,15 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 
    
 #### 💼 My latest projects:
-1. [Talos_rental (fivem script)](https://github.com/TalosTheMinoan/Talos_rental)
-2. [PlayerMoods (fivem script)](https://github.com/TalosTheMinoan/Playermood)
-3. [LoadingScreen (fivem script)](https://github.com/TalosTheMinoan/LoadingScreen)
-4. [System Information](https://github.com/TalosTheMinoan/System-Information)
-5. [Check ping command (fivem script)](https://github.com/TalosTheMinoan/Check-ping)
-6. [Check for blacklisted cars (fivem script)](https://github.com/TalosTheMinoan/Blacklist-Vehicles)
-7. [Toggle engine (fivem script)](https://github.com/TalosTheMinoan/Toggle-engine)
-8. [Change time (fivem script)](https://github.com/TalosTheMinoan/Change-time)
+1. [Police Trunk Armory (fivem script)](https://github.com/TalosTheMinoan/Police-Trunk-Gear-Up-fivem-script)
+2. [Talos_rental (fivem script)](https://github.com/TalosTheMinoan/Talos_rental)
+3. [PlayerMoods (fivem script)](https://github.com/TalosTheMinoan/Playermood)
+4. [LoadingScreen (fivem script)](https://github.com/TalosTheMinoan/LoadingScreen)
+5. [System Information](https://github.com/TalosTheMinoan/System-Information)
+6. [Check ping command (fivem script)](https://github.com/TalosTheMinoan/Check-ping)
+7. [Check for blacklisted cars (fivem script)](https://github.com/TalosTheMinoan/Blacklist-Vehicles)
+8. [Toggle engine (fivem script)](https://github.com/TalosTheMinoan/Toggle-engine)
+9. [Change time (fivem script)](https://github.com/TalosTheMinoan/Change-time)
 
 ## 🌟 Current Projects
 - 🔧 Working on: An advanced FiveM admin menu
