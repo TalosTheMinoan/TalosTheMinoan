@@ -25,7 +25,7 @@ I'm TalosTheMinoan, a passionate developer and tech enthusiast. Welcome to my Gi
 
    
 #### 💼 My latest projects:
-1. [Police Trunk Armory (fivem script)](https://github.com/TalosTheMinoan/Police-Trunk-Gear-Up-fivem-script)
+1. [Police Trunk Armory (fivem script)](https://github.com/TalosTheMinoan/Police-Trunk-Gear-Up-fivem-script-/)
 2. [Talos_rental (fivem script)](https://github.com/TalosTheMinoan/Talos_rental)
 3. [PlayerMoods (fivem script)](https://github.com/TalosTheMinoan/Playermood)
 4. [LoadingScreen (fivem script)](https://github.com/TalosTheMinoan/LoadingScreen)
